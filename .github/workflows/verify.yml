@@ -1,0 +1,17 @@
+---
+name: Verify Action Fix
+on: workflow_dispatch  # This lets you run it manually with a button
+
+jobs:
+  test-fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Test My Action Fix
+        # Replace 'your-username' and 'fix-uv-path' with your actual info
+        uses: Jkhall81/ansible-lint@action-test
+        with:
+          setup_python: "true"
+          python_version: "3.14"
